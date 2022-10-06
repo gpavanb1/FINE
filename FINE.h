@@ -2,6 +2,7 @@
 #define FINE
 
 #include <bit>
+#include <limits>
 #include <cstdint>
 
 
@@ -35,17 +36,6 @@ float Q_nroot(float number, int n)
     float const y = std::bit_cast<float>(
 		root_map[n] - (std::bit_cast<std::uint32_t>(number) / n));
 	return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp(y, n)));
-}
-
-constexpr uint64_t exp_map_d[5] = {0x0, 0x0, 0x3fef4fa6ec687400, 0x7fde9f4dd8d0e800, 0xbfcdeef4c5396000};
-
-double Q_exp_double(double number, int n)
-{
-    static_assert(std::numeric_limits<double>::is_iec559); // (enable only on IEEE 754)
-    
-    return std::bit_cast<double>(
-		(std::bit_cast<std::uint64_t>(number) * n) - exp_map_d[n]);
-    
 }
 
 #endif
