@@ -24,7 +24,7 @@ float Quake(float number) {
 
 	float const y = std::bit_cast<float>(
 		0x5f3759df - (std::bit_cast<std::uint32_t>(number) >> 1));
-	return y * (1.5f - (number * 0.5f * y * y));   
+    return y * (1.5f - (number * 0.5f * y * y));   
 }
 
 float Q_nroot(float number, int n)
@@ -35,7 +35,7 @@ float Q_nroot(float number, int n)
     const float one_over_n = (1.0f/n);
     float const y = std::bit_cast<float>(
 		root_map[n] - (std::bit_cast<std::uint32_t>(number) / n));
-	return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp(y, n)));
+    return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp(y, n)));
 }
 
 #endif

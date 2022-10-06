@@ -19,9 +19,9 @@ float Q_exp(float number, int n)
 float Quake(float number) {
     static_assert(std::numeric_limits<float>::is_iec559); // (enable only on IEEE 754)
 
-	float const y = std::bit_cast<float>(
+    float const y = std::bit_cast<float>(
 		0x5f3759df - (std::bit_cast<std::uint32_t>(number) >> 1));
-	return y * (1.5f - (number * 0.5f * y * y));   
+    return y * (1.5f - (number * 0.5f * y * y));   
 }
 
 float Q_nroot(float number, int n)
@@ -32,7 +32,7 @@ float Q_nroot(float number, int n)
     const float one_over_n = (1.0f/n);
     float const y = std::bit_cast<float>(
 		root_map[n] - (std::bit_cast<std::uint32_t>(number) / n));
-	return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp(y, n)));
+    return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp(y, n)));
 }
 
 constexpr uint64_t root_map_d[10] = {0x0, 0x7fde9f4dd8d0e800, 0x5fe6f77a629cb000, 0x553f14de908b4400, 0x4feb2390a7829000, 0x4cb8c5fb8216f000, 0x4a973242be79dc00, 0x49117f9a32c08400, 0x47ed399bc9f58400, 0x4709e6b978741000};
@@ -56,7 +56,7 @@ double Q_nroot_double(double number, int n)
     const float one_over_n = (1.0f/n);
     double const y = std::bit_cast<double>(
 		root_map_d[n] - (std::bit_cast<std::uint64_t>(number) / n));
-	return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp_double(y, n)));
+    return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp_double(y, n)));
 }
 
 

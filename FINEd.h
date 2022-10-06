@@ -26,7 +26,7 @@ double Q_nroot_double(double number, int n)
     const float one_over_n = (1.0f/n);
     double const y = std::bit_cast<double>(
 		root_map_d[n] - (std::bit_cast<std::uint64_t>(number) / n));
-	return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp_double(y, n)));
+    return y * ((1.0f + one_over_n) - ( number * one_over_n * Q_exp_double(y, n)));
 }
 
 #endif
