@@ -2,8 +2,10 @@
 
 **F**ast **IN**verse **E**xponentiation
 
+Compute `x^(1/n)` and `x^n` orders-of-magnitude faster than standard methods
 
-# How to install and execute?
+
+## How to install and execute?
 
 Make sure you are using at least `C++20` standard for this library 
 
@@ -21,7 +23,7 @@ The following program illustrates a basic example
 
 int main(int argc, char *argv[]) {
 
-    float a = 14.0f;
+    float a = 19.2f;
     int n = 2;
 
     printf("FINE Value: %f\n", Q_exp(a, n));
