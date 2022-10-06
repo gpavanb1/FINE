@@ -1,2 +1,5 @@
 test
 .vscode
+benchmark
+benchmark.dSYM
+test.dSYM

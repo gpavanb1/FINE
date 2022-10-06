@@ -2,7 +2,7 @@
 
 **F**ast **IN**verse **E**xponentiation
 
-Compute `x^(1/n)` and `x^n` orders-of-magnitude faster than standard methods
+Compute `x^(1/n)` and `x^n` faster than standard methods
 
 
 ## How to install and execute?
@@ -61,11 +61,13 @@ When the computations were repeated with different values for N=50,000 times (in
 
 ```
 Exponent
-Times (float, double, C): 2, 2, 1195
+Times (float, double, C): 390, 387, 2306
 
 Inverse-Root
-Times (float, double, Quake, C): 2, 2, 2, 10487
+Times (float, double, Quake, C): 1291, 1629, 658, 2069
 ```
+
+The `Quake` method supports only inverse square roots
 
 ## How does this work?
 
