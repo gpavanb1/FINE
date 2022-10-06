@@ -1,6 +1,6 @@
 # FINE
 
-*F*ast *IN*verse *E*xponentiation
+**F**ast **IN**verse **E**xponentiation
 
 
 # How to install and execute?
