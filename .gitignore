@@ -3,3 +3,5 @@ test
 benchmark
 benchmark.dSYM
 test.dSYM
+bazel-*
+*.bazel.lock

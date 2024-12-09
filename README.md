@@ -7,11 +7,11 @@ Compute `x^(1/n)` and `x^n` faster than standard methods
 
 ## How to install and execute?
 
-Make sure you are using at least `C++20` standard for this library 
+This library uses the [Bazel](https://bazel.build) build system for compilation
 
-Just clone, compile and run using
+The tests can be executed using
 ```
-g++ -std=c++2a -O2 -Wall -pedantic test.cpp && ./test.out
+bazel test //:test
 ```
 
 The following program illustrates a basic example
@@ -41,7 +41,15 @@ int main(int argc, char *argv[]) {
 
 ## Results
 
-For a trial run with the above program,
+
+An example file `benchmark.cpp` is provided that compares between various methods.
+
+This can be executed using
+```
+bazel run //:benchmark
+```
+
+The output is as follows:
 
 ```
 Exponent
